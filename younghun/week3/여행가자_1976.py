@@ -42,7 +42,8 @@ def solution(n, m, cities):
 
         if not is_reachable:  # 만약 DFS로 전체 탐색해도 목적지에 도달 할 수 없다면 NO
             return "NO"
-    return "YES"
+    
+    return "YES"  # 모든 여행 계획의 목적지에 대하여 전부 도달 할 수 있다면 YES
 
 
 print(solution(n, m, cities))
