@@ -6,14 +6,14 @@ N, M, L, K = map(int, inp())
 stars = [list(map(int, inp())) for _ in range(K)]
 res = 0
 def count(x, y):
-    global res
     cnt = 0
     for k in range(K):
         # x + L까지 포함
-        if x <= stars[k][0] <= x + L and y <= stars[k][1] <= y + L:cnt += 1
-        res = max(res, cnt)
+        if x <= stars[k][0] <= x + L and y <= stars[k][1] <= y + L:
+            cnt += 1
+    return cnt
 # 사분면 느낌
 for i in range(K):
     for j in range(K):
-        count(stars[i][0], stars[j][1])
+        res = max(res, count(stars[i][0], stars[j][1]))
 print(K - res)
